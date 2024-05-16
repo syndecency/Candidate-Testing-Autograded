@@ -41,23 +41,22 @@ function askQuestion() {
 
 for (let i = 0; i < questions.length; i++) {
   candidateAnswer = input.question(questions[0 + i])
-  candidateAnswers.push(candidateAnswer)
-  if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
-    console.log(`Correct! The answer is ${correctAnswers[i]}`);
-  } else {
-    console.log(`Incorrect. The correct answer is ${correctAnswers[i]}, while you answered ${candidateAnswers[i]}.`)
-  }
-}}
+  candidateAnswers.push(candidateAnswer)}
+}
 
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 
-  /*
+
 for (let i = 0; i < questions.length; i++) {
-  console.log(`The correct answer is ${correctAnswers[i]}. Your answer was ${candidateAnswers[i]}.`);
-} */
+  if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
+    console.log(`Correct! The answer is ${correctAnswers[i]}`);
+  } else {
+    console.log(`Incorrect. The correct answer is ${correctAnswers[i]}, while you answered ${candidateAnswers[i]}.`)
+  }
+} 
 
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
