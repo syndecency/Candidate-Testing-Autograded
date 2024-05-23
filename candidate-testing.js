@@ -48,23 +48,29 @@ for (let i = 0; i < questions.length; i++) {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-
+let numberOfCorrectAnswers = 0;
 
 for (let i = 0; i < questions.length; i++) {
   if (correctAnswers[i].toLowerCase() === candidateAnswers[i].toLowerCase()) {
     console.log(`Correct! The answer is ${correctAnswers[i]}`);
+    numberOfCorrectAnswers++;
   } else {
     console.log(`Incorrect. The correct answer is ${correctAnswers[i]}, while you answered ${candidateAnswers[i]}.`)
   }
 } 
 
 
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
+  let grade = (numberOfCorrectAnswers / questions.length) * 100;  //TODO 3.2 use this variable to calculate the candidates score.
 
+  console.log(`You scored ${grade}% on this quiz...`);
+  if (grade >= 80) {
+    console.log("Which means you passed. Congrats!");
+  } else {
+    console.log("You did not pass this test. Better luck next time!");
+  }
 
   return grade;
 }
-
 function runProgram() {
   askForName();
   // TODO 1.1c: Greet candidate using their name //
